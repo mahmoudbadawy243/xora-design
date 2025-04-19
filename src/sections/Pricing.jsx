@@ -4,6 +4,9 @@ import clsx from "clsx";
 import CountUp from "react-countup";
 import { plans } from "../constants/index.jsx";
 import Button from "../components/Button.jsx";
+import {outline} from "../src/assets/images/bg-outlines.svg";
+import {outline_2} from "../src/assets/images/bg-outlines-fill.png";
+import {check_icon} from "../src/assets/images/check.png";
 
 const Pricing = () => {
   const [monthly, setMonthly] = useState(false);
@@ -41,14 +44,14 @@ const Pricing = () => {
 
             <div className="pricing-bg">
               <img
-                src="../src/assets/images/bg-outlines.svg"
+                src={outline}
                 width={960}
                 height={380}
                 alt="outline"
                 className="relative z-2"
               />
               <img
-                src="../src/assets/images/bg-outlines-fill.png"
+                src={outline_2}
                 width={960}
                 height={380}
                 alt="outline"
@@ -140,7 +143,7 @@ const Pricing = () => {
                       className="relative flex items-center gap-5"
                     >
                       <img
-                        src={"../src/assets/images/check.png"}
+                        src={check_icon}
                         alt="check"
                         className="size-10 object-contain"
                       />
