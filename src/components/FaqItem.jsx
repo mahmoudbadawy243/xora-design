@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import React from "react";
 import { useState } from "react";
-import { SlideDown } from "react-slidedown";
-import "react-slidedown/lib/slidedown.css";
+// Removed react-slidedown import
+// Removed slidedown css import
 
 const FaqItem = ({ item, index }) => {
   const [activeId, setActiveId] = useState(null);
@@ -42,11 +42,15 @@ const FaqItem = ({ item, index }) => {
         </div>
       </div>
 
-      <SlideDown>
-        {activeId === item.id && (
-          <div className="body-3 px-7 py-3.5">{item.answer}</div>
+      {/* Replaced SlideDown with CSS transition */}
+      <div 
+        className={clsx(
+          "overflow-hidden transition-all duration-500",
+          active ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
-      </SlideDown>
+      >
+        <div className="body-3 px-7 py-3.5">{item.answer}</div>
+      </div>
 
       <div
         className={clsx(
