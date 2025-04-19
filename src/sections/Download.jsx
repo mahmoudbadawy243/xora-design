@@ -1,8 +1,7 @@
 import { links, logos } from "../constants/index.jsx";
 import { Marker } from "../components/Marker.jsx";
 import { Element } from "react-scroll";
-import {lines} from "../src/assets/images/lines.svg"
-import {screen} from "../src/assets/images/screen.jpg"
+
 const Download = () => {
   return (
     <section>
@@ -41,7 +40,7 @@ const Download = () => {
                         <Marker />
                       </span>
                       <img
-                        src={lines}
+                        src={"../src/assets/images/lines.svg"}
                         alt="lines"
                         className="absolute size-13/20 object-contain"
                       />
@@ -60,7 +59,7 @@ const Download = () => {
                   <span className="download_preview-dot left-16 bg-p1/15" />
 
                   <img
-                    src={screen}
+                    src="../src/assets/images/screen.jpg"
                     width={855}
                     height={655}
                     alt="screen"
