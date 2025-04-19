@@ -1,50 +1,24 @@
-import { Marker } from "./Marker";
+import clsx from "clsx";
 
-// import clsx from " clsx ";
-export default function Button({
-  icon,
-  children,
-  href,
-  containerClassName,
-  onClick,
-  markerFill,
-}) {
-  const Inner = () => (
-    // inside component
-    <>
-      <span className="relative flex items-center min-h-[60px] px-4 g4 rounded-2xl inner-before group-hover:before:opacity-100 overflow-hidden">
-        <span className="absolute -left-[1px]">
-          <Marker markerFill={markerFill} />
-        </span>
-        {icon && (
-          <img
-            src={icon}
-            alt="cirle"
-            className="size-10 mr-5 object-contain z-10"
-          />
-        )}
-        <span className="relative z-2 font-poppins font-semibold text-p1 uppercase">
-          {children}
-        </span>
-      </span>
-
-      {/* border affect when hover */}
-      <span className="glow-before glow-after" />
-    </>
-  );
-  return href ? (
-    <a
-      className={` relative p-0.5 g5 rounded-2xl shadow-500 group ${containerClassName} `}
-      href={href}
-    >
-      <Inner />
-    </a>
-  ) : (
+const Button = ({ children, icon, className, ...props }) => {
+  // If icon is a string path, convert it to an imported variable in your actual implementation
+  return (
     <button
-      className={` relative p-0.5 g5 rounded-2xl shadow-500 group ${containerClassName} `}
-      onClick={onClick}
+      className={clsx(
+        "group relative flex h-14 items-center justify-center gap-2.5 overflow-hidden rounded-full px-7 text-p4 transition-colors duration-300 hover:text-p1",
+        className
+      )}
+      {...props}
     >
-      <Inner />
+      <div className="button-bg absolute inset-0 -z-1" />
+      {icon && (
+        <div className="relative z-1">
+          <img src={icon} alt="icon" className="size-6" />
+        </div>
+      )}
+      <div className="relative z-1 button-text">{children}</div>
     </button>
   );
-}
+};
+
+export default Button;
