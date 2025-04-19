@@ -1,6 +1,8 @@
 import { Element, Link as LinkScroll } from "react-scroll"; // Element act as div to scroll to
 import Button from "../components/Button";
-// import { Link as LinkScroll } from "react-scroll";
+// Import images directly
+import zapIcon from "../assets/images/zap.svg";
+import heroImage from "../assets/images/hero.png";
 
 export default function Hero() {
   return (
@@ -19,12 +21,12 @@ export default function Hero() {
               learn and superisingly powerful .
             </p>
             <LinkScroll to="features" offset={-100} spy smooth>
-              <Button icon="../src/assets/images/zap.svg"> Try it now </Button>
+              <Button icon={zapIcon}> Try it now </Button>
             </LinkScroll>
           </div>
           <div className="absolute -top-32 left-[calc(50%-340px)] w-[1230px] pointer-events-none hero-img_res">
             <img
-              src="../src/assets/images/hero.png"
+              src={heroImage}
               alt="hero"
               className="size-[1000px] ml-auto mt-[80px] max-lg:h-auto "
             />
